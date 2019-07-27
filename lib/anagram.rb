@@ -1,13 +1,18 @@
 # Your code goes here!
 class Anagram
   attr_accessor :word
-  
+  @@array = []
   def initialize(word)
     @word = word
-    @@all << self
   end 
-  @@array = []
-  def match
-    
+  
+  def match(collection)
+    output = []
+    collection.each_with_index do |el, idx|
+      if el.split("").sort.join == word.split("").sotr.join
+        output << collection[idx]
+      end
+    end
+    output
   end
 end
