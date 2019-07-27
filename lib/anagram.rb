@@ -6,13 +6,9 @@ class Anagram
     @word = word
   end 
   
-  def match(collection)
-    output = []
-    collection.each_with_index do |el, idx|
-      if el.split("").sort.join == word.split("").sotr.join
-        output << collection[idx]
-      end
-    end
-    output
+  def match(array)
+    array.select {|w| w split("").sort == @word.split("").sort}
   end
 end
+    
+    
